@@ -1,5 +1,5 @@
 
-%read image -- put image url
+%read image -- put image path
 image = imread('15.jpg');
 
 % convert image to grayscale
