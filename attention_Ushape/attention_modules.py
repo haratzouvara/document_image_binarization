@@ -6,7 +6,7 @@ class AttentionModules(tf.keras.layers.Layer):
     
 
     This method includes channel attention and spatial attention modules
-     It uses decoder's feature map to weight skip encoder feature map.
+    It uses decoder's feature map to weight skip encoder feature map.
     'attention module' takes as inputs the encoder's and decoder's feature maps
     and the number of desired output channels.
 
@@ -15,7 +15,7 @@ class AttentionModules(tf.keras.layers.Layer):
 
     This method is used to weight skip encoder feature map.
     'self attention module' takes as input skip encoder's feature map
-    and the number of desire output channels
+    and the number of desired output channels
 
     """
 
