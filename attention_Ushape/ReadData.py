@@ -60,18 +60,7 @@ class FlowData():
      results = model.fit(dataset.get_data(), valid.get_data()
                     steps_per_epoch=steps,validation_steps=val_steps, epochs=100)
 
-
-
-
-
-
-
-
-
-
     """
-
-
 
 
     class augmentation():
