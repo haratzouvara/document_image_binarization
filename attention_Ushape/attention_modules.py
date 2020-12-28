@@ -9,7 +9,7 @@ class AttentionModules(tf.keras.layers.Layer):
 
     'self attention module' based on:
 
-    This method is used to weight skip encoder feature map
+    This method is used to weight skip encoder feature map.
     'self attention module' takes as input skip encoder's feature map
     and the number of desire output channels
 
