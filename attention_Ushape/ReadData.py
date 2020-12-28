@@ -50,8 +50,6 @@ class FlowData():
     noisy, segm = s.load_data()
 
      dataset = FlowData.network_ram(noisy=noisy,segm=segm.reshape(-1,256,256,1),batch_size=batch_size,shuffling=shuffling, augm_data=augm_data)
-     valid = FlowData.network_ram(path_valid,batch_size=batch_size,shuffling=shuffling, augm_data=augm_data)
-
      **then we can follow th same processing for validation dataset
 
      --- use get_data() to load data to network
