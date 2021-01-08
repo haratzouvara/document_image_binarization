@@ -20,8 +20,8 @@ list = os.listdir(path_noisy_valid)
 valid_files = len(list)
 
 """  --  noisy images and ground truth images joined on the axis of width -- """
-#path_noisy_segm_train = 'validation_noisy_binary_paper5'
-#path_noisy_segm_valid = 'validation_noisy_binary_paper5'
+#path_noisy_segm_train = 'training_noisy_binary'
+#path_noisy_segm_valid = 'validation_noisy_binary'
 
 #list = os.listdir(path_noisy_segm_train)   # number of image files
 #train_files = len(list)
