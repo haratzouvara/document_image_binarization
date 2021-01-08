@@ -1,3 +1,6 @@
+import tensorflow as tf
+from attention_modules import AttentionModules
+
 class AttentionBinarizationModel(tf.keras.layers.Layer):
     """
                             -- Attention Binarization Model --
@@ -78,9 +81,9 @@ class AttentionBinarizationModel(tf.keras.layers.Layer):
         up1 = tf.keras.layers.UpSampling2D((2, 2))(conv5)
         up1 = self.residual_block(filters=128, kernel_size=(3, 3))(up1)
         if attention_fun == 'attention_module':
-            att1 = AttentionModules().attention_module(filters=128)(up1, conv4)
+            att1 = AttentionModules().attention_module(filters=128, ratio=8)(up1, conv4)
         elif attention_fun == 'self_attention_module':
-            att1 = AttentionModules().self_attention_module(filters=128, kernel_size=(1, 1))(conv4)
+            att1 = AttentionModules().self_attention_module(filters=128, ratio=8)(conv4)
         else:
             att1 = conv4
         merge1 = tf.keras.layers.concatenate([att1, up1], axis=3)
@@ -90,9 +93,9 @@ class AttentionBinarizationModel(tf.keras.layers.Layer):
         up2 = tf.keras.layers.UpSampling2D((2, 2))(merge1)
         up2 = self.residual_block(filters=64, kernel_size=(3, 3))(up2)
         if attention_fun == 'attention_module':
-            att2 = AttentionModules().attention_module(filters=64)(up2, conv3)
+            att2 = AttentionModules().attention_module(filters=64, ratio=8)(up2, conv3)
         elif attention_fun == 'self_attention_module':
-            att2 = AttentionModules().self_attention_module(filters=64, kernel_size=(1, 1))(conv3)
+            att2 = AttentionModules().self_attention_module(filters=64, ratio=8)(conv3)
         else:
             att2 = conv3
         merge2 = tf.keras.layers.concatenate([att2, up2], axis=3)
@@ -102,9 +105,9 @@ class AttentionBinarizationModel(tf.keras.layers.Layer):
         up3 = tf.keras.layers.UpSampling2D((2, 2))(merge2)
         up3 = self.residual_block(filters=32, kernel_size=(3, 3))(up3)
         if attention_fun == 'attention_module':
-            att3 = AttentionModules().attention_module(filters=32)(up3, conv2)
+            att3 = AttentionModules().attention_module(filters=32, ratio=8)(up3, conv2)
         elif attention_fun == 'self_attention_module':
-            att3 = conv2
+            att3 = AttentionModules().self_attention_module(filters=32, ratio=8)(conv2)
         else:
             att3 = conv2
         merge3 = tf.keras.layers.concatenate([att3, up3], axis=3)
@@ -114,9 +117,9 @@ class AttentionBinarizationModel(tf.keras.layers.Layer):
         up4 = tf.keras.layers.UpSampling2D((2, 2))(merge3)
         up4 = self.residual_block(filters=16, kernel_size=(3, 3))(up4)
         if attention_fun == 'attention_module':
-            att4 = AttentionModules().attention_module(filters=16)(up4, conv1)
+            att4 = AttentionModules().attention_module(filters=16, ratio=8)(up4, conv1)
         elif attention_fun == 'self_attention_module':
-            att4 = conv1
+            att4 = AttentionModules().self_attention_module(filters=16, ratio=8)(conv1)
         else:
             att4 = conv1
         merge4 = tf.keras.layers.concatenate([att4, up4], axis=3)
