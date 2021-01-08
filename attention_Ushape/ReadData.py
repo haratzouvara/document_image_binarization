@@ -1,3 +1,8 @@
+import numpy as np
+import glob
+import cv2
+import tensorflow as tf
+
 class FlowData():
 
     """
@@ -50,6 +55,8 @@ class FlowData():
     noisy, segm = s.load_data()
 
      dataset = FlowData.network_ram(noisy=noisy,segm=segm.reshape(-1,256,256,1),batch_size=batch_size,shuffling=shuffling, augm_data=augm_data)
+     valid = FlowData.network_ram(path_valid,batch_size=batch_size,shuffling=shuffling, augm_data=augm_data)
+
      **then we can follow th same processing for validation dataset
 
      --- use get_data() to load data to network
@@ -57,6 +64,7 @@ class FlowData():
      val_steps = 6000//batch_size
      results = model.fit(dataset.get_data(), valid.get_data()
                     steps_per_epoch=steps,validation_steps=val_steps, epochs=100)
+
 
     """
 
@@ -74,8 +82,8 @@ class FlowData():
             def apply_augm(noisy, segm):
 
                 def normalization(noisy, segm):
-                    noisy = noisy * self.augm_status[0]
-                    segm = segm * self.augm_status[0]
+                    noisy = tf.cast(noisy,tf.float32) * self.augm_status[0]
+                    segm = tf.cast(segm,tf.float32) * self.augm_status[0]
                     return noisy, tf.round(segm)
 
                 def flipping_right_left(noisy, segm):
@@ -200,7 +208,7 @@ class FlowData():
                 for e in ext:
                     for infile in sorted(glob.glob(self.path_segm + '/*' + e)):
                         img_array = cv2.imread((infile), 0)
-                        ret, bw_img = cv2.threshold(img_array, 127, 1, cv2.THRESH_BINARY)
+                        ret, bw_img = cv2.threshold(img_array, 127, 255, cv2.THRESH_BINARY)
                         self.segm_data.append(bw_img)
 
                 self.segm_data = np.asarray(self.segm_data)
@@ -217,6 +225,7 @@ class FlowData():
             self.batch_size = batch_size
             self.shuffling = shuffling
             self.augm_data = augm_data
+            print(augm_data)
 
         def get_data(self):
             def load_dataset():
@@ -229,7 +238,8 @@ class FlowData():
                 y_return = inp2
 
                 if self.augm_data is not None:
-                    x_return, y_return = (augm_data).apply_augm()(x_return, y_return)
+
+                    x_return, y_return = (self.augm_data).apply_augm()(x_return, y_return)
 
                 return x_return, y_return
 
