@@ -80,24 +80,26 @@ class FlowData():
         def apply_augm(self):
 
             def apply_augm(noisy, segm):
+                image_x = tf.shape(noisy)[0]
+                image_y = tf.shape(noisy)[1]
 
                 def normalization(noisy, segm):
                     noisy = tf.cast(noisy,tf.float32) * self.augm_status[0]
                     segm = tf.cast(segm,tf.float32) * self.augm_status[0]
                     return noisy, tf.round(segm)
 
-                def flipping_right_left(noisy, segm):
+                def flipping_right_left(noisy, segm, image_x, image_y):
                     concat_images = tf.concat([noisy, segm], 2)
                     image = tf.image.random_flip_left_right(concat_images)
-                    noisy = tf.slice(image, [0, 0, 0], [256, 256, 3])
-                    segm = tf.slice(image, [0, 0, 3], [256, 256, 1])
+                    noisy = tf.slice(image, [0, 0, 0], [image_x, image_y, 3])
+                    segm = tf.slice(image, [0, 0, 3], [image_x, image_y, 1])
                     return noisy, segm
 
-                def flipping_up_down(noisy, segm):
+                def flipping_up_down(noisy, segm, image_x, image_y):
                     concat_images = tf.concat([noisy, segm], 2)
                     image = tf.image.random_flip_up_down(concat_images)
-                    noisy = tf.slice(image, [0, 0, 0], [256, 256, 3])
-                    segm = tf.slice(image, [0, 0, 3], [256, 256, 1])
+                    noisy = tf.slice(image, [0, 0, 0], [image_x, image_y, 3])
+                    segm = tf.slice(image, [0, 0, 3], [image_x, image_y, 1])
                     return noisy, segm
 
                 def bright(noisy, segm):
