@@ -1,3 +1,8 @@
+import numpy as np
+import glob
+import cv2
+import tensorflow as tf
+
 class FlowData():
 
     """
@@ -50,6 +55,8 @@ class FlowData():
     noisy, segm = s.load_data()
 
      dataset = FlowData.network_ram(noisy=noisy,segm=segm.reshape(-1,256,256,1),batch_size=batch_size,shuffling=shuffling, augm_data=augm_data)
+     valid = FlowData.network_ram(path_valid,batch_size=batch_size,shuffling=shuffling, augm_data=augm_data)
+
      **then we can follow th same processing for validation dataset
 
      --- use get_data() to load data to network
@@ -57,6 +64,7 @@ class FlowData():
      val_steps = 6000//batch_size
      results = model.fit(dataset.get_data(), valid.get_data()
                     steps_per_epoch=steps,validation_steps=val_steps, epochs=100)
+
 
     """
 
@@ -72,24 +80,26 @@ class FlowData():
         def apply_augm(self):
 
             def apply_augm(noisy, segm):
+                image_x = tf.shape(noisy)[0]
+                image_y = tf.shape(noisy)[1]
 
                 def normalization(noisy, segm):
-                    noisy = noisy * self.augm_status[0]
-                    segm = segm * self.augm_status[0]
+                    noisy = tf.cast(noisy,tf.float32) * self.augm_status[0]
+                    segm = tf.cast(segm,tf.float32) * self.augm_status[0]
                     return noisy, tf.round(segm)
 
-                def flipping_right_left(noisy, segm):
+                def flipping_right_left(noisy, segm, image_x, image_y):
                     concat_images = tf.concat([noisy, segm], 2)
                     image = tf.image.random_flip_left_right(concat_images)
-                    noisy = tf.slice(image, [0, 0, 0], [256, 256, 3])
-                    segm = tf.slice(image, [0, 0, 3], [256, 256, 1])
+                    noisy = tf.slice(image, [0, 0, 0], [image_x, image_y, 3])
+                    segm = tf.slice(image, [0, 0, 3], [image_x, image_y, 1])
                     return noisy, segm
 
-                def flipping_up_down(noisy, segm):
+                def flipping_up_down(noisy, segm, image_x, image_y):
                     concat_images = tf.concat([noisy, segm], 2)
                     image = tf.image.random_flip_up_down(concat_images)
-                    noisy = tf.slice(image, [0, 0, 0], [256, 256, 3])
-                    segm = tf.slice(image, [0, 0, 3], [256, 256, 1])
+                    noisy = tf.slice(image, [0, 0, 0], [image_x, image_y, 3])
+                    segm = tf.slice(image, [0, 0, 3], [image_x, image_y, 1])
                     return noisy, segm
 
                 def bright(noisy, segm):
@@ -134,8 +144,8 @@ class FlowData():
 
     class network_dict():
 
-        def __init__(self, path_train, batch_size, shuffling, augm_data=None):
-            self.path_train = path_train
+        def __init__(self, path_noisy_segm, batch_size, shuffling, augm_data=None):
+            self.path_noisy_segm = path_noisy_segm
             self.batch_size = batch_size
             self.shuffling = shuffling
             self.augm_data = augm_data
@@ -162,7 +172,7 @@ class FlowData():
 
                 return x_return, y_return
 
-            dataset = tf.data.Dataset.list_files(self.path_train + '/*.jpg')
+            dataset = tf.data.Dataset.list_files(self.path_noisy_segm + '/*.jpg')
             dataset = dataset.map(load_image_train, num_parallel_calls=tf.data.experimental.AUTOTUNE)
             dataset = dataset.shuffle(self.shuffling)
             dataset = dataset.batch(self.batch_size).prefetch((self.batch_size) * 2).repeat()
@@ -200,7 +210,7 @@ class FlowData():
                 for e in ext:
                     for infile in sorted(glob.glob(self.path_segm + '/*' + e)):
                         img_array = cv2.imread((infile), 0)
-                        ret, bw_img = cv2.threshold(img_array, 127, 1, cv2.THRESH_BINARY)
+                        ret, bw_img = cv2.threshold(img_array, 127, 255, cv2.THRESH_BINARY)
                         self.segm_data.append(bw_img)
 
                 self.segm_data = np.asarray(self.segm_data)
@@ -217,6 +227,7 @@ class FlowData():
             self.batch_size = batch_size
             self.shuffling = shuffling
             self.augm_data = augm_data
+            #print(augm_data)
 
         def get_data(self):
             def load_dataset():
@@ -229,7 +240,8 @@ class FlowData():
                 y_return = inp2
 
                 if self.augm_data is not None:
-                    x_return, y_return = (augm_data).apply_augm()(x_return, y_return)
+
+                    x_return, y_return = (self.augm_data).apply_augm()(x_return, y_return)
 
                 return x_return, y_return
 
