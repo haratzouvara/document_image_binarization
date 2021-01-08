@@ -50,7 +50,7 @@ shuffling = 10
 augm_data = FlowData.call_method(normalization=1/255., bright=0.2, contrast=(1.0, 1.5))
 
 """
- -------     USAGE OF LOAD TO RAM IMAGES METHOD ---------
+ -------     LOAD IMAGES TO RAM  METHOD    --------
 
 """
 # -- load images to ram
@@ -70,7 +70,7 @@ valid = FlowData.network_ram(noisy=noisy_valid, segm=segm_valid.reshape(-1,image
 
 
 """
- -------     USAGE OF READ IMAGES FROM DIRECTORIES METHOD ---------
+ -------     READ IMAGES FROM DIRECTORIES METHOD   --------
 
 """
 # -- read images from directories
