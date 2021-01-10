@@ -1,5 +1,4 @@
-# Document Image Binarization using
-# a Deep Learning Neural Network
+## Document Image Binarization using a Deep Learning Neural Network
 
 Tensorflow implementation of U-shape architecture based on U-net architecture. 
 The model includes an attention mechanism inspirited by 'CBAM' attention mechanism
