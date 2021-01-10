@@ -39,8 +39,6 @@ I. Pratikakis, B. Gatos and K. Ntirogiannis, "ICDAR 2011 Document Image Binariza
 I. Pratikakis, K. Zagoris, X. Karagiannis, L. Tsochatzidis, T. Mondal and I. Marthot-Santaniello, "ICDAR 2019 Competition on Document Image Binarization (DIBCO 2019)," 2019 International Conference on Document Analysis and Recognition (ICDAR), Sydney, Australia, 2019, pp. 1547-1556, doi: 10.1109/ICDAR.2019.00249.
 
 
-
-
 ### License
 
 This project is licensed under the MIT License - see the LICENSE file for details
