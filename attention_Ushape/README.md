@@ -16,7 +16,8 @@ https://arxiv.org/pdf/1805.08318.pdf
 
 The framework can be utilised in document image binary segmentation task.
 
-LICENSE:
+
+MIT license
 
 Copyright (c) 2020 Hara Tzouvara
 
