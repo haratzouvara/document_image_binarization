@@ -5,12 +5,12 @@ The model includes an attention mechanism inspired by 'CBAM' attention mechanism
 #### Examples 
 <p float="left">
 <img   src="images/24testing.png"  hspace="20" width="250" >  
-<img   src="images/24bin_testing.png"  width="250">   
+<img   src="images/24_bin.png"  width="250">   
 </p>
 
 <p float="left">
 <img   src="images/112testing.png"  hspace="20" width="250" >  
-<img   src="images/112bin_testing.png"  width="250">   
+<img   src="images/112_bin.png"  width="250">   
 </p>
 
 ### Reference:
