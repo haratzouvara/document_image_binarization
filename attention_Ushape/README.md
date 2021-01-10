@@ -1,3 +1,6 @@
+# Document Image Binarization using
+# a Deep Learning Neural Network
+
 Tensorflow implementation of U-shape architecture based on U-net architecture. 
 The model includes an attention mechanism inspirited by 'CBAM' attention mechanism
 
@@ -14,5 +17,5 @@ Reference:
 https://arxiv.org/pdf/1805.08318.pdf
 
 
-The framework can be utilised in document image binary segmentation task.
+The framework can be utilised in  task.
 
