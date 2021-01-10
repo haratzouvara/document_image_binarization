@@ -2,6 +2,12 @@
 
 Tensorflow implementation of a U-shape architecture based on U-net architecture. 
 The model includes an attention mechanism inspired by 'CBAM' attention mechanism
+<figure>
+<p float="left">
+<img src="images/24testing.png" width="250" alt= {{"cdcd"}}/>  
+<img src="images/24bin_testing.png" width="250">
+</p>
+</figure>
 
 ### Reference:
 
@@ -19,4 +25,4 @@ https://arxiv.org/pdf/1805.08318.pdf
 ### License
 
 This project is licensed under the MIT License - see the LICENSE file for details
-<img src="images/24testing.png" width="300">
+
