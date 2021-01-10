@@ -1,16 +1,17 @@
 Tensorflow implementation of U-shape architecture based on U-net architecture. 
-In the model can be included an attention mechanism.
+The model includes an attention mechanism inspirited by 'CBAM' attention mechanism
 
-There is the ability for usage of an mechanism based on 'CBAM' attention module
-or to use a self-attention mechanism based on 'SAGAN'.
-
-
+Reference:
+https://arxiv.org/pdf/1807.06521.pdf
 
 
+There is also the ability to use the 'SAGAN' self-attention mechanism or not to use one.
+
+Reference:
+https://arxiv.org/pdf/1805.08318.pdf
 
 
-
-The framework can be utilised in document image segmentation task.
+The framework can be utilised in document image binary segmentation task.
 
 
 
