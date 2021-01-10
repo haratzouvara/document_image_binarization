@@ -6,6 +6,7 @@ Reference:
 https://arxiv.org/pdf/1807.06521.pdf
 
 
+
 There is also the ability to use the 'SAGAN' self-attention mechanism or not to use one.
 
 Reference:
