@@ -2,7 +2,7 @@
 
 Tensorflow implementation of a U-shape architecture based on U-net architecture. 
 The model includes an attention mechanism inspired by 'CBAM' attention mechanism
-
+#### Examples 
 <p float="left">
 <img   src="images/24testing.png"  hspace="20" width="250" >  
 <img   src="images/24bin_testing.png"  width="250">   
