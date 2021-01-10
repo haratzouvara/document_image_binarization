@@ -1,4 +1,4 @@
-These images are examples of application of the proposed attention U-shape architecture
+Images are examples of application of the proposed attention U-shape architecture
 
 Images source:
 
