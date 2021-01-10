@@ -18,7 +18,7 @@ The framework can be utilised in document image binary segmentation task.
 
 LICENSE:
 
-Copyright (c) <year> <copyright holders>
+Copyright (c) 2020 Hara Tzouvara
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
