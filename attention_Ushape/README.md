@@ -19,4 +19,4 @@ https://arxiv.org/pdf/1805.08318.pdf
 ### License
 
 This project is licensed under the MIT License - see the LICENSE file for details
-![](images/filename%2024testing.png)
+![](images/filename/24testing.png)
