@@ -18,3 +18,7 @@ https://arxiv.org/pdf/1805.08318.pdf
 
 The framework can be utilised in  task.
 
+### License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
