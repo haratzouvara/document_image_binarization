@@ -1,4 +1,7 @@
 ### Document image binarization algorithms
+This repo includes implementations of document image binarization algorithms  
+and my own method
+
 * Gatos method [1]
 * Ntirogiannis method [2]
 * Su (Local Maximum and Minimum) method [3]
