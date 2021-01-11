@@ -1,7 +1,7 @@
 ### Document image binarization algorithms
 * Gatos method [1]
 * Ntirogiannis method [2]
-* Su (Local Minimum and Maximum) method [3]
+* Su (Local Maximum and Minimum) method [3]
 * Otsu method [4]
 * Niblack method [5]
 * Sauvola method [6]
