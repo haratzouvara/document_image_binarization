@@ -23,13 +23,9 @@ The model includes an attention mechanism inspired by CBAM attention mechanism
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (a) noisy_document_image &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (b) binary_result_for(a) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (c) noisy_document_image &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (d) binary_result_for(c)
 
 
-
-
-
 ### Reference:
 
 https://arxiv.org/pdf/1807.06521.pdf
-
 
 
 There is also the ability to use the SAGAN self-attention mechanism or not to use one.
@@ -44,6 +40,17 @@ https://arxiv.org/pdf/1805.08318.pdf
 I. Pratikakis, B. Gatos and K. Ntirogiannis, "ICDAR 2011 Document Image Binarization Contest (DIBCO 2011)," 2011 International Conference on Document Analysis and Recognition, Beijing, 2011, pp. 1506-1510, doi: 10.1109/ICDAR.2011.299.
 
 I. Pratikakis, K. Zagoris, X. Karagiannis, L. Tsochatzidis, T. Mondal and I. Marthot-Santaniello, "ICDAR 2019 Competition on Document Image Binarization (DIBCO 2019)," 2019 International Conference on Document Analysis and Recognition (ICDAR), Sydney, Australia, 2019, pp. 1547-1556, doi: 10.1109/ICDAR.2019.00249.
+
+### Requirements 
+
+Python (suggested 3.7.1)
+Numpy
+PIL
+ntpath
+os-sys
+OpenCv
+Tensorflow (suggested 2.4.0)
+
 
 
 ### License
