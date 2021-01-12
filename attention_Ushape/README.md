@@ -13,7 +13,7 @@ The model includes an attention mechanism inspired by CBAM attention mechanism
 
 <p float="left">
 <img   src="images/112testing.png"  hspace="20" width="200" >  
-<img   src="images/mybin_112.png"  width="200">   
+<img   src="images/mybin_112.png"  hspace="20" width="200">   
 <img   src="images/24testing.png"  hspace="20" width="200" >  
 <img   src="images/mybin_24.png"  width="200">   
 </p>
