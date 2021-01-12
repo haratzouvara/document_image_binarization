@@ -25,7 +25,6 @@ contrast = contrast_map(gray, w_);
 otsu_contrast = otsu(contrast);
 %figure, imshow(otsu_contrast)
 
-otsu_contrast = bwareaopen(otsu_contrast,10);
 
 %calculate stroke width
 sw =stroke_width(otsu_contrast);
