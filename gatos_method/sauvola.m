@@ -5,10 +5,11 @@ function output=sauvola(image,w,k)
 image = double(image);
 
 % Mean value
-mean = averagefilter(image,[w w],'replicate');
+filterWindow = ones(w,w) /(w*w);
+mean = imfilter(image, filterWindow, 'replicate' );
 
 % Standard deviation
-meanSquare = averagefilter(image.^2,[w w], 'replicate');
+meanSquare = imfilter(image.^2,filterWindow, 'replicate' );  
 deviation = (meanSquare - mean.^2).^0.5;
 
 R = max(deviation(:));
