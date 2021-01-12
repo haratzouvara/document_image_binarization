@@ -1,4 +1,4 @@
-### Implementation of Gatos binararization method
+### Implementation of Gatos binarization method
 
 #### Example
 <p float="left">
