@@ -1,5 +1,5 @@
 %read image -- put image path
-image = imread('143.png');
+image = imread('image.png');
 
 % convert image to grayscale
 gray = rgb2gray(image);
