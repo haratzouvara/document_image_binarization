@@ -9,15 +9,22 @@ The model includes an attention mechanism inspired by CBAM attention mechanism
 
 
 #### Examples 
-<p float="left">
-<img   src="images/24testing.png"  hspace="20" width="220" >  
-<img   src="images/mybin_24.png"  width="220">   
-</p>
+
 
 <p float="left">
-<img   src="images/112testing.png"  hspace="20" width="220" >  
-<img   src="images/mybin_112.png"  width="220">   
+<img   src="images/112testing.png"  hspace="20" width="200" >  
+<img   src="images/mybin_112.png"  width="200">   
+<img   src="images/24testing.png"  hspace="20" width="200" >  
+<img   src="images/mybin_24.png"  width="200">   
 </p>
+
+
+
+##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (a) noisy_document_image &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (b) ntiro_background_estimation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (c) binary_result
+
+
+
+
 
 ### Reference:
 
