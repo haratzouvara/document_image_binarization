@@ -1,6 +1,7 @@
 
-%read image -- put image path
-image = imread('15.jpg');
+
+%read image -- put image url
+image = imread('image.jpg');
 
 % convert image to grayscale
 gray = rgb2gray(image);
@@ -8,18 +9,20 @@ gray = rgb2gray(image);
 % window
 w=15;
 
+% k value
+k=0.4;
+
 % convert to double
 gray = double(gray);
 
-% Mean value   %% averagefilter is provided by matlab  
-mean = averagefilter(gray,[w w],'replicate');
+% Mean value
+filterWindow = ones(w,w) /(w*w);
+mean = imfilter(gray, filterWindow, 'replicate' );
 
 % Standard deviation
-meanSquare = averagefilter(gray.^2,[w w], 'replicate');
+meanSquare = imfilter(gray.^2,filterWindow, 'replicate' );  
 deviation = (meanSquare - mean.^2).^0.5;
 
-% k value
-k=0.4;
 
 R = max(deviation(:));
 threshold = mean.*(1 + k * (deviation / R-1));
