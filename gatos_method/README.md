@@ -7,4 +7,4 @@
 <img   src="images/gatos_binary.jpg" width="220">   
 <p/>
 
-yes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; no
+&nbsp;&nbsp;&nbsp; noisy_document_image &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gatos_background_estimation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; binary_results
