@@ -14,7 +14,8 @@ class FlowData():
       rotation(90rot image), contrast(change image contrast)
 
     There are two options in class FlowData() to load data to network. The first one is to read
-    data from directory (noisy image and the corresponding binary image must be merged into one image across the width axis).
+    data from directory (noisy image and the corresponding binary image must be merged into one image across the width axis)
+    and the second one to import images into matrices.
 
     Example of reading image from directory using FlowData Class:
     --- define directory of training and validation sets, batch size and shuffling
@@ -41,7 +42,7 @@ class FlowData():
                     steps_per_epoch=steps,validation_steps=val_steps, epochs=100)
 
 
-    Example of put images on matrices and then load to network using FlowData Class:
+    Example of import images into matrices and then load to network using FlowData Class:
     --- define directory of training noisy data and binary data
 
     path_noisy  = 'training_data_noisy/'
