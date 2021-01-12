@@ -1,5 +1,3 @@
-
-
 %read image -- put image url
 image = imread('image.jpg');
 
