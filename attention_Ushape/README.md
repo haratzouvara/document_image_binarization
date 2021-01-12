@@ -32,7 +32,7 @@ There is also the ability to use the SAGAN self-attention mechanism or not to us
 https://arxiv.org/pdf/1805.08318.pdf
 
 
-### Images Reference: 
+### Images References: 
 
 I. Pratikakis, B. Gatos and K. Ntirogiannis, "ICDAR 2011 Document Image Binarization Contest (DIBCO 2011)," 2011 International Conference on Document Analysis and Recognition, Beijing, 2011, pp. 1506-1510, doi: 10.1109/ICDAR.2011.299.
 
