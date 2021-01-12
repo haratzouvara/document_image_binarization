@@ -1,7 +1,7 @@
 clc;  close all;
 
 % read image
-image = imread('4.jpg');
+image = imread('image.jpg');
 [r, c, z] = size(image);
 
 if z> 1
