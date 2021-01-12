@@ -7,4 +7,4 @@
 <img   src="images/gatos_binary.jpg" width="220">   
 <p/>
 
-noiy_image    $~$         background_estim
+noiy_image <pre>   background_estim
