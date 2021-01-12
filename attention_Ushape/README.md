@@ -43,13 +43,13 @@ I. Pratikakis, K. Zagoris, X. Karagiannis, L. Tsochatzidis, T. Mondal and I. Mar
 
 ### Requirements 
 
-Python (suggested 3.7.1)
-Numpy
-PIL
-ntpath
-os-sys
-OpenCv
-Tensorflow (suggested 2.4.0)
+Python (suggested 3.7.1)  
+Numpy  
+PIL  
+ntpath  
+os-sys  
+OpenCv  
+Tensorflow (suggested 2.4.0)  
 
 
 
