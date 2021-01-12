@@ -7,4 +7,4 @@
 <img   src="images/gatos_binary.jpg" width="220">   
 <p/>
 
-yes <space> no
+yes <space><space><space><space><space><space><space><space> no
