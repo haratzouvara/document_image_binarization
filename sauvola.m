@@ -2,7 +2,11 @@
 image = imread('image.jpg');
 
 % convert image to grayscale
-gray = rgb2gray(image);
+if z > 1
+   gray = rgb2gray(image);
+else
+   gray = image;
+end
 
 % window
 w=15;
