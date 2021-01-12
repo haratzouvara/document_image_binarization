@@ -14,7 +14,7 @@ class FlowData():
       rotation(90rot image), contrast(change image contrast)
 
     There are two options in class FlowData() to load data to network. The first one is to read
-    data from directory (noisy image and the corresponding binary image must be merged into one image).
+    data from directory (noisy image and the corresponding binary image must be merged into one image across the width axis).
 
     Example of reading image from directory using FlowData Class:
     --- define directory of training and validation sets, batch size and shuffling
